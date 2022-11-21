@@ -1,7 +1,7 @@
 {
   "name": "ztx.materials",
   "version": "1.0.0",
-  "displayName": "ZTX Materials",
+  "displayName": "ZTX.Materials",
   "description": "This package contains the materials used in ZTX.",
   "unity": "2022.1",
   "keywords": [

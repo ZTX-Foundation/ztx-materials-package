@@ -1,24 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace ZTX.Materials
 {
-    [CreateAssetMenu(fileName = "Style Sets", menuName = "ZTX/Style Sets", order = 1)]
-    public class StyleSetsSO : ScriptableObject
+    public class RuntimeMaterialReplacer : MonoBehaviour
     {
-        public MaterialStyleSetSO[] styleSets;
+        [SerializeField] private StyleSetsSO styleSets;
 
-        // Swap all the relevant materials of target gameObject to the new material styleset
-        public void SetMaterials(GameObject target, int styleSetIndex)
+        public static RuntimeMaterialReplacer Instance;
+
+        private void Awake()
         {
-            if (styleSetIndex > styleSets.Length)
-            {
-                Debug.LogError("styleSetIndex out of bounds");
-            }
+            Instance = this;
+        }
 
-            MaterialStyleSetSO styleSet = styleSets[styleSetIndex];
-
+        public void SetInitialMaterials(GameObject target)
+        {
             SkinnedMeshRenderer[] skinnedMeshRenderers = target.GetComponentsInChildren<SkinnedMeshRenderer>();
 
             for (int i = 0; i < skinnedMeshRenderers.Length; i++)
@@ -31,7 +30,7 @@ namespace ZTX.Materials
                     Material m = materials[j];
                         
                     // Replace the material
-                    m = SwapMaterial(m, styleSet);
+                    m = SwapMaterial(m, styleSets.styleSets[0]);
 
                     materials[j] = m;
                 }
@@ -39,24 +38,26 @@ namespace ZTX.Materials
                 s.materials = materials;
             }
         }
-
+        
         private Material SwapMaterial(Material m, MaterialStyleSetSO styleSet)
         {
-            if (m.name.Contains("body"))
+            if (m.shader.name.ToLower().Contains("body"))
                 return styleSet.body;
-            if (m.name.Contains("eyelash"))
+            if (m.shader.name.ToLower().Contains("softedge"))
                 return styleSet.eyelash;
-            if (m.name.Contains("eye"))
+            if (m.shader.name.ToLower().Contains("eye"))
                 return styleSet.eye;
-            if (m.name.Contains("hair"))
+            if (m.shader.name.ToLower().Contains("hair"))
                 return styleSet.hair;
-            if (m.name.Contains("standardTransparent"))
+            if (m.shader.name.ToLower().Contains("standardtransparent"))
                 return styleSet.standardTransparent;
-            if (m.name.Contains("standardTwoSide"))
+            if (m.shader.name.ToLower().Contains("2s"))
                 return styleSet.standardTwoSide;
-            if (m.name.Contains("standard"))
+            if (m.shader.name.ToLower().Contains("standard"))
                 return styleSet.standard;
-            if (m.name.Contains("fur"))
+            if (m.shader.name.ToLower().Contains("velvet"))
+                return styleSet.standard;
+            if (m.shader.name.ToLower().Contains("fur"))
                 return styleSet.fur;
             Debug.LogError("No replacing material found");
             return null;

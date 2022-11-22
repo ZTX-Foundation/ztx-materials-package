@@ -60,7 +60,7 @@ namespace ZTX.Materials
                 return styleSet.standard;
             if (m.name.Contains("fur"))
                 return styleSet.fur;
-            Debug.LogError("No replacing material found");
+            Debug.LogError($"No replacing material found for material {m.name} with shader {m.shader.name}");
             return null;
         }
     }

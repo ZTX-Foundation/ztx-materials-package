@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46fd05f40840443c4be284831fd798ac, type: 3}
   m_Name: StyleSetA
   m_EditorClassIdentifier: 
-  body: {fileID: 0}
-  eye: {fileID: 0}
-  eyelash: {fileID: 0}
-  hair: {fileID: 0}
-  standard: {fileID: 0}
-  standardTransparent: {fileID: 0}
-  standardTwoSide: {fileID: 0}
-  fur: {fileID: 0}
+  body: {fileID: 2100000, guid: becd64d7a92c34731bac8fe923f5b73f, type: 2}
+  eye: {fileID: 2100000, guid: 9d4fb9c319c4c4a7a9f5217e5eeb20f3, type: 2}
+  eyelash: {fileID: 2100000, guid: 9420591bb58fe41fd992519330c29bd4, type: 2}
+  hair: {fileID: 2100000, guid: 8275f97e60cca4586bcd4c8ca213accb, type: 2}
+  standard: {fileID: 2100000, guid: b7d3b944d945e4ea89c3455decab423d, type: 2}
+  standardTransparent: {fileID: 2100000, guid: d696cc8a7a980499889e447f1d2a0656, type: 2}
+  standardTwoSide: {fileID: 2100000, guid: cae115d267d6145ffa120b9252947465, type: 2}
+  fur: {fileID: 2100000, guid: 2055a42aa07384d648848515d5f5e72b, type: 2}

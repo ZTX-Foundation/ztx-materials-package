@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97bc3effe6e3746cbbda2efd83763933, type: 3}
   m_Name: StyleSets
   m_EditorClassIdentifier: 
-  styleSets: []
+  styleSets:
+  - {fileID: 11400000, guid: 5a00566a9691e489896ef8e92075a78e, type: 2}

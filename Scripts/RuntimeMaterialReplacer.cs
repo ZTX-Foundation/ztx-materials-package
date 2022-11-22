@@ -30,7 +30,9 @@ namespace ZTX.Materials
                     Material m = materials[j];
                         
                     // Replace the material
-                    m = SwapMaterial(m, styleSets.styleSets[0]);
+                    Material mNew = SwapMaterial(m, styleSets.styleSets[0]);
+                    if (mNew != null) 
+                        m = mNew;
 
                     materials[j] = m;
                 }
@@ -41,7 +43,8 @@ namespace ZTX.Materials
         
         private Material SwapMaterial(Material m, MaterialStyleSetSO styleSet)
         {
-            if (m.shader.name.ToLower().Contains("body"))
+            Debug.Log($"{m.shader.name}");
+            if (m.shader.name.ToLower().Contains("skin"))
                 return styleSet.body;
             if (m.shader.name.ToLower().Contains("softedge"))
                 return styleSet.eyelash;

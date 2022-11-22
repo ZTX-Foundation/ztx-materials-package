@@ -31,8 +31,15 @@ namespace ZTX.Materials
                         
                     // Replace the material
                     Material mNew = SwapMaterial(m, styleSets.styleSets[0]);
-                    if (mNew != null) 
+                    if (mNew != null)
+                    {
+                        Texture tex = m.GetTexture("_MainTex");
+                        if (tex != null)
+                        {
+                            mNew.SetTexture("_BaseMap", tex);
+                        }
                         m = mNew;
+                    }
 
                     materials[j] = m;
                 }

@@ -43,7 +43,6 @@ namespace ZTX.Materials
         
         private Material SwapMaterial(Material m, MaterialStyleSetSO styleSet)
         {
-            Debug.Log($"{m.shader.name}");
             if (m.shader.name.ToLower().Contains("skin"))
                 return styleSet.body;
             if (m.shader.name.ToLower().Contains("softedge"))

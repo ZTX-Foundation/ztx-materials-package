@@ -33,11 +33,18 @@ namespace ZTX.Materials
                     Material mNew = SwapMaterial(m, styleSets.styleSets[0]);
                     if (mNew != null)
                     {
-                        Texture tex = m.GetTexture("_MainTex");
-                        if (tex != null)
+                        if (m.HasProperty("_MainTex"))
                         {
+                            Texture tex = m.GetTexture("_MainTex");
                             mNew.SetTexture("_BaseMap", tex);
                         }
+
+                        if (m.HasProperty("_Color"))
+                        {
+                            Color color = m.GetColor("_Color");
+                            mNew.SetColor("_BaseColor", color);
+                        }
+
                         m = mNew;
                     }
 

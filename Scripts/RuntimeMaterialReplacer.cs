@@ -10,6 +10,8 @@ namespace ZTX.Materials
         [SerializeField] private StyleSetsSO styleSets;
         [SerializeField] private int startingIndexStyleset;
 
+        private int currentIndexStyleset;
+        
         public static RuntimeMaterialReplacer Instance;
 
         public StyleSetsSO StyleSets => styleSets;
@@ -17,6 +19,20 @@ namespace ZTX.Materials
         private void Awake()
         {
             Instance = this;
+
+            currentIndexStyleset = startingIndexStyleset;
+        }
+
+        public void NextMaterialSet(GameObject target)
+        {
+            currentIndexStyleset++;
+
+            if (currentIndexStyleset > styleSets.styleSets.Length)
+            {
+                currentIndexStyleset = 0;
+            }
+            
+            styleSets.SetMaterials(target, currentIndexStyleset);
         }
 
         public void SetInitialMaterials(GameObject target)

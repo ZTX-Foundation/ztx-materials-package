@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46fd05f40840443c4be284831fd798ac, type: 3}
+  m_Name: StyleSetC
+  m_EditorClassIdentifier: 
+  body: {fileID: 2100000, guid: 0d099bb625800479ea15730328df8c04, type: 2}
+  eye: {fileID: 2100000, guid: 4ba4547f820504c2590e1d472b114170, type: 2}
+  eyelash: {fileID: 2100000, guid: 55c14489df5274e40b94a0d3d32dba53, type: 2}
+  hair: {fileID: 2100000, guid: 39c056f9ed10e4ffda52e240ff91e059, type: 2}
+  standard: {fileID: 2100000, guid: 21bd4f54291994dd5817cf92d8dc8f9f, type: 2}
+  standardTransparent: {fileID: 2100000, guid: 35172d3c8352b4af988ab59ef8d81a16, type: 2}
+  standardTwoSide: {fileID: 2100000, guid: 6d38ab0f04825431585200d167011a12, type: 2}
+  fur: {fileID: 2100000, guid: 2a1379a47d52b4bd4a2f4f01d49864cd, type: 2}
+  mainTextureName: _MainTex
+  mainColorName: _MainColor

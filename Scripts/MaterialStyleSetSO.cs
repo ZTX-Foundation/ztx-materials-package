@@ -18,5 +18,8 @@ namespace ZTX.Materials
         public Material standardTransparent;
         public Material standardTwoSide;
         public Material fur;
+
+        [Header("Shader details")] public string mainTextureName;
+        public string mainColorName;
     }
 }

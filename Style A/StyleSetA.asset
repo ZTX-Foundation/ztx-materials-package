@@ -20,3 +20,5 @@ MonoBehaviour:
   standardTransparent: {fileID: 2100000, guid: d696cc8a7a980499889e447f1d2a0656, type: 2}
   standardTwoSide: {fileID: 2100000, guid: cae115d267d6145ffa120b9252947465, type: 2}
   fur: {fileID: 2100000, guid: 2055a42aa07384d648848515d5f5e72b, type: 2}
+  mainTextureName: _BaseMap
+  mainColorName: _BaseColor

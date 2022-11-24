@@ -8,6 +8,7 @@ namespace ZTX.Materials
     public class RuntimeMaterialReplacer : MonoBehaviour
     {
         [SerializeField] private StyleSetsSO styleSets;
+        [SerializeField] private int startingIndexStyleset;
 
         public static RuntimeMaterialReplacer Instance;
 
@@ -28,21 +29,32 @@ namespace ZTX.Materials
                 for (int j = 0; j < materials.Length; j++)
                 {
                     Material m = materials[j];
+                    MaterialStyleSetSO styleset = styleSets.styleSets[startingIndexStyleset];
                         
                     // Replace the material
-                    Material mNew = SwapMaterial(m, styleSets.styleSets[0]);
+                    Material mNew = SwapMaterial(m, styleset);
                     if (mNew != null)
                     {
                         if (m.HasProperty("_MainTex"))
                         {
                             Texture tex = m.GetTexture("_MainTex");
-                            mNew.SetTexture("_BaseMap", tex);
+                            mNew.SetTexture(styleset.mainTextureName, tex);
+                        }
+                        else if (m.HasProperty("_BaseTex"))
+                        {
+                            Texture tex = m.GetTexture("_BaseTex");
+                            mNew.SetTexture(styleset.mainTextureName, tex);
                         }
 
                         if (m.HasProperty("_Color"))
                         {
                             Color color = m.GetColor("_Color");
-                            mNew.SetColor("_BaseColor", color);
+                            mNew.SetColor(styleset.mainColorName, color);
+                        }
+                        else if (m.HasProperty("_BaseColor"))
+                        {
+                            Color color = m.GetColor("_BaseColor");
+                            mNew.SetColor(styleset.mainColorName, color);
                         }
 
                         m = mNew;

@@ -87,15 +87,15 @@ namespace ZTX.Materials
         
         private Material SwapMaterial(Material m, MaterialStyleSetSO styleSet)
         {
-            if (m.name.ToLower().Contains("skin"))
+            if (m.shader.name.ToLower().Contains("skin"))
                 return styleSet.body;
             if (m.shader.name.ToLower().Contains("softedge"))
                 return styleSet.eyelash;
-            if (m.name.ToLower().Contains("eye"))
+            if (m.shader.name.ToLower().Contains("eye"))
                 return styleSet.eye;
             if (m.shader.name.ToLower().Contains("hair"))
                 return styleSet.hair;
-            if (m.shader.name.ToLower().Contains("standardtransparent"))
+            if (m.shader.name.ToLower().Contains("transparent"))
                 return styleSet.standardTransparent;
             if (m.shader.name.ToLower().Contains("2s"))
                 return styleSet.standardTwoSide;

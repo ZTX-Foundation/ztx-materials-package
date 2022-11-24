@@ -32,6 +32,8 @@ namespace ZTX.Materials
                 currentIndexStyleset = 0;
             }
             
+            Debug.Log($"{currentIndexStyleset} {styleSets.styleSets.Length}");
+            
             styleSets.SetMaterials(target, currentIndexStyleset);
         }
 

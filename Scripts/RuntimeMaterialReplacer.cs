@@ -12,6 +12,8 @@ namespace ZTX.Materials
 
         public static RuntimeMaterialReplacer Instance;
 
+        public StyleSetsSO StyleSets => styleSets;
+
         private void Awake()
         {
             Instance = this;

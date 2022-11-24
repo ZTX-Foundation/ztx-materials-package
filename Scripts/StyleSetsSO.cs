@@ -17,7 +17,7 @@ namespace ZTX.Materials
                 Debug.LogError("styleSetIndex out of bounds");
             }
 
-            MaterialStyleSetSO styleSet = styleSets[styleSetIndex];
+            MaterialStyleSetSO styleset = styleSets[styleSetIndex];
 
             SkinnedMeshRenderer[] skinnedMeshRenderers = target.GetComponentsInChildren<SkinnedMeshRenderer>();
 
@@ -29,11 +29,35 @@ namespace ZTX.Materials
                 for (int j = 0; j < materials.Length; j++)
                 {
                     Material m = materials[j];
-                        
+                    
                     // Replace the material
-                    Material mNew = SwapMaterial(m, styleSet);
-                    if (mNew != null) 
+                    Material mNew = SwapMaterial(m, styleset);
+                    if (mNew != null)
+                    {
+                        if (m.HasProperty("_MainTex"))
+                        {
+                            Texture tex = m.GetTexture("_MainTex");
+                            mNew.SetTexture(styleset.mainTextureName, tex);
+                        }
+                        else if (m.HasProperty("_BaseTex"))
+                        {
+                            Texture tex = m.GetTexture("_BaseTex");
+                            mNew.SetTexture(styleset.mainTextureName, tex);
+                        }
+
+                        if (m.HasProperty("_Color"))
+                        {
+                            Color color = m.GetColor("_Color");
+                            mNew.SetColor(styleset.mainColorName, color);
+                        }
+                        else if (m.HasProperty("_BaseColor"))
+                        {
+                            Color color = m.GetColor("_BaseColor");
+                            mNew.SetColor(styleset.mainColorName, color);
+                        }
+
                         m = mNew;
+                    }
                     
                     materials[j] = m;
                 }

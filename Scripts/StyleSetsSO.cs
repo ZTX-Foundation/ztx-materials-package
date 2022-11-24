@@ -68,21 +68,23 @@ namespace ZTX.Materials
 
         private Material SwapMaterial(Material m, MaterialStyleSetSO styleSet)
         {
-            if (m.name.Contains("body"))
+            if (m.shader.name.ToLower().Contains("skin"))
                 return styleSet.body;
-            if (m.name.Contains("eyelash"))
+            if (m.shader.name.ToLower().Contains("softedge"))
                 return styleSet.eyelash;
-            if (m.name.Contains("eye"))
+            if (m.shader.name.ToLower().Contains("eye"))
                 return styleSet.eye;
-            if (m.name.Contains("hair"))
+            if (m.shader.name.ToLower().Contains("hair"))
                 return styleSet.hair;
-            if (m.name.Contains("standardTransparent"))
+            if (m.shader.name.ToLower().Contains("standardtransparent"))
                 return styleSet.standardTransparent;
-            if (m.name.Contains("standardTwoSide"))
+            if (m.shader.name.ToLower().Contains("2s"))
                 return styleSet.standardTwoSide;
-            if (m.name.Contains("standard"))
+            if (m.shader.name.ToLower().Contains("standard"))
                 return styleSet.standard;
-            if (m.name.Contains("fur"))
+            if (m.shader.name.ToLower().Contains("velvet"))
+                return styleSet.standard;
+            if (m.shader.name.ToLower().Contains("fur"))
                 return styleSet.fur;
             Debug.LogError($"No replacing material found for material {m.name} with shader {m.shader.name}");
             return null;

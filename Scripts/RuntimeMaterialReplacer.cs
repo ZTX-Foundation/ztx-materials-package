@@ -27,13 +27,11 @@ namespace ZTX.Materials
         {
             currentIndexStyleset++;
 
-            if (currentIndexStyleset > styleSets.styleSets.Length)
+            if (currentIndexStyleset >= styleSets.styleSets.Length)
             {
                 currentIndexStyleset = 0;
             }
-            
-            Debug.Log($"{currentIndexStyleset} {styleSets.styleSets.Length}");
-            
+
             styleSets.SetMaterials(target, currentIndexStyleset);
         }
 

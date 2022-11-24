@@ -68,9 +68,9 @@ namespace ZTX.Materials
 
         private Material SwapMaterial(Material m, MaterialStyleSetSO styleSet)
         {
-            if (m.name.ToLower().Contains("skin"))
+            if (m.name.ToLower().Contains("body"))
                 return styleSet.body;
-            if (m.shader.name.ToLower().Contains("softedge"))
+            if (m.name.ToLower().Contains("eyelash"))
                 return styleSet.eyelash;
             if (m.name.ToLower().Contains("eye"))
                 return styleSet.eye;

@@ -26,25 +26,14 @@ namespace ZTX.Materials
                 SkinnedMeshRenderer s = skinnedMeshRenderers[i];
                 Material[] materials = s.materials;
 
-                Debug.Log($"Finding materials in skinned mesh renderers");
-                
                 for (int j = 0; j < materials.Length; j++)
                 {
                     Material m = materials[j];
                     
-                    Debug.Log($"Found material {m.name} on {s.name} for {s.gameObject.name}");
-
                     // Replace the material
-                    //Material mNew = SwapMaterial(m, styleset);
-                    
-                    Material mNew = new Material(SwapMaterial(m, styleset));
-                    
-                    Debug.Log($"Found styleset material {mNew.name}");
-                    
+                    Material mNew = new Material(SwapMaterial(m, styleset)); 
                     mNew.name = $"{mNew.name}(Clone)";
-                    
-                    Debug.Log($"Renamed to {mNew.name}");
-                    
+
                     if (mNew != null)
                     {
                         if (m.HasProperty("_MainTex"))
@@ -58,13 +47,7 @@ namespace ZTX.Materials
                             mNew.SetTexture(styleset.mainTextureName, tex);
                         }
 
-                        if (m.HasProperty("_Color"))
-                        {
-                            Color color = m.GetColor("_Color");
-                            mNew.SetColor(styleset.mainColorName, color);
-                            Debug.Log($"_Color - {color} - {styleset.mainColorName} - {m.name} - {mNew.name}");
-                        }
-                        else if (m.HasProperty("_BaseColor"))
+                        if (m.HasProperty("_BaseColor"))
                         {
                             Color color = m.GetColor("_BaseColor");
                             mNew.SetColor(styleset.mainColorName, color);

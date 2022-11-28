@@ -31,7 +31,8 @@ namespace ZTX.Materials
                     Material m = materials[j];
                     
                     // Replace the material
-                    Material mNew = SwapMaterial(m, styleset);
+                    //Material mNew = SwapMaterial(m, styleset);
+                    Material mNew = new Material(SwapMaterial(m, styleset));
 
                     if (mNew != null)
                     {

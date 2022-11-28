@@ -196,7 +196,7 @@ Material:
     - _DetailVertexColors: 0
     - _Diffuse: 1
     - _DiffuseBrightness: 1
-    - _DiffuseContrast: 1
+    - _DiffuseContrast: 1.5
     - _DiffusePerPixel: 0
     - _DiffuseWrap: 0
     - _DstBlend: 10

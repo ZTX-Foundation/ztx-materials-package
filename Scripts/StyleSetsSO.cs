@@ -41,14 +41,14 @@ namespace ZTX.Materials
                             Texture tex = m.GetTexture("_MainTex");
                             mNew.SetTexture(styleset.mainTextureName, tex);
                             
-                            Debug.Log($"got MainTex for {m.name} - {tex}");
+                            Debug.Log($"got MainTex for {m.name} - {tex == null}");
                         }
                         if (m.HasProperty("_BaseMap"))
                         {
                             Texture tex = m.GetTexture("_BaseMap");
                             mNew.SetTexture(styleset.mainTextureName, tex);
                             
-                            Debug.Log($"got BaseMap for {m.name} - {tex}");
+                            Debug.Log($"got BaseMap for {m.name} - {tex == null}");
                         }
 
                         if (m.HasProperty("_BaseColor"))

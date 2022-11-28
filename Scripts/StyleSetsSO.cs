@@ -91,15 +91,15 @@ namespace ZTX.Materials
                 return styleSet.eye;
             if (m.shader.name.ToLower().Contains("hair"))
                 return styleSet.hair;
-            if (m.shader.name.ToLower().Contains("transparent"))
+            if (m.name.ToLower().Contains("transparent") || m.shader.name.ToLower().Contains("transparent"))
                 return styleSet.standardTransparent;
-            if (m.shader.name.ToLower().Contains("2s"))
+            if (m.name.ToLower().Contains("2s") || m.shader.name.ToLower().Contains("2s"))
                 return styleSet.standardTwoSide;
-            if (m.shader.name.ToLower().Contains("standard"))
+            if (m.name.ToLower().Contains("standard") || m.shader.name.ToLower().Contains("standard"))
                 return styleSet.standard;
-            if (m.shader.name.ToLower().Contains("velvet"))
+            if (m.name.ToLower().Contains("velvet") || m.shader.name.ToLower().Contains("velvet"))
                 return styleSet.standard;
-            if (m.shader.name.ToLower().Contains("fur"))
+            if (m.name.ToLower().Contains("fur") || m.shader.name.ToLower().Contains("fur"))
                 return styleSet.fur;
             Debug.LogError($"No replacing material found for material {m.name} with shader {m.shader.name}");
             return null;

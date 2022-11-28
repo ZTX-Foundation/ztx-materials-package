@@ -21,4 +21,4 @@ MonoBehaviour:
   standardTwoSide: {fileID: 2100000, guid: 6d38ab0f04825431585200d167011a12, type: 2}
   fur: {fileID: 2100000, guid: 2a1379a47d52b4bd4a2f4f01d49864cd, type: 2}
   mainTextureName: _MainTex
-  mainColorName: _MainColor
+  mainColorName: _Color

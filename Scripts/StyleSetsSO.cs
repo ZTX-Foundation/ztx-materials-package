@@ -51,13 +51,11 @@ namespace ZTX.Materials
                         if (m.HasProperty("_Color"))
                         {
                             Color color = m.GetColor("_Color");
-                            color = Color.black;
                             mNew.SetColor(styleset.mainColorName, color);
                         }
                         else if (m.HasProperty("_BaseColor"))
                         {
                             Color color = m.GetColor("_BaseColor");
-                            color = Color.black;
                             mNew.SetColor(styleset.mainColorName, color);
                         }
 

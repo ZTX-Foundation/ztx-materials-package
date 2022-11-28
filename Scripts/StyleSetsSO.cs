@@ -31,8 +31,8 @@ namespace ZTX.Materials
                     Material m = materials[j];
                     
                     // Replace the material
-                    Material mNeww = SwapMaterial(m, styleset);
-                    Material mNew = Instantiate(mNeww);
+                    Material mNew = SwapMaterial(m, styleset);
+
                     if (mNew != null)
                     {
                         if (m.HasProperty("_MainTex"))
@@ -58,8 +58,6 @@ namespace ZTX.Materials
                             color = Color.black;
                             mNew.SetColor(styleset.mainColorName, color);
                         }
-                        
-                        mNew.SetColor(styleset.mainColorName, Color.black);
 
                         m = mNew;
                     }

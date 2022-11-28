@@ -27,7 +27,6 @@ Material:
   m_ValidKeywords:
   - AMBIENT
   - ANIME_SOFT
-  - DIFFUSE
   - FOG
   - MATCAP_PERSPECTIVE
   - OUTLINE_PASS_DISABLED
@@ -185,7 +184,7 @@ Material:
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BlendOp: 0
-    - _Brightness: 1
+    - _Brightness: 3
     - _BumpScale: 1
     - _CameraFadeEnd: 0
     - _CameraFadeStart: 0
@@ -204,7 +203,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DetailUV: 0
     - _DetailVertexColors: 0
-    - _Diffuse: 1
+    - _Diffuse: 0
     - _DiffuseBrightness: 1
     - _DiffuseContrast: 1
     - _DiffusePerPixel: 0

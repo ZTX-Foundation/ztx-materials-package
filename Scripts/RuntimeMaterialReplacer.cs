@@ -59,31 +59,31 @@ namespace ZTX.Materials
                     Material mNew = SwapMaterial(m, styleset);
                     if (mNew != null)
                     {
-                        bool hasTexture = false;
-                        
                         if (m.HasProperty("_MainTex"))
                         {
                             Texture tex = m.GetTexture("_MainTex");
                             mNew.SetTexture(styleset.mainTextureName, tex);
-                            hasTexture = true;
                         }
                         else if (m.HasProperty("_BaseTex"))
                         {
                             Texture tex = m.GetTexture("_BaseTex");
                             mNew.SetTexture(styleset.mainTextureName, tex);
-                            hasTexture = true;
                         }
                         
                         if (m.HasProperty("_Color"))
                         {
                             Color color = m.GetColor("_Color");
-                            mNew.SetColor(styleset.mainColorName, hasTexture? color : Color.clear);
+                            mNew.SetColor(styleset.mainColorName, color);
                         }
                         else if (m.HasProperty("_BaseColor"))
                         {
                             Color color = m.GetColor("_BaseColor");
-                            mNew.SetColor(styleset.mainColorName, hasTexture? color : Color.clear);
+                            mNew.SetColor(styleset.mainColorName, color);
                         }
+                        
+                        // Catch temporary eyelash issue
+                        if (m.shader.name.ToLower().Contains("softedge") || m.name.ToLower().Contains("eyelash"))
+                            mNew.SetColor(styleset.mainColorName, Color.clear);
 
                         m = mNew;
                     }

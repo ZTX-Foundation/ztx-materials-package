@@ -40,6 +40,7 @@ namespace ZTX.Materials
                         {
                             Texture tex = m.GetTexture("_MainTex");
                             mNew.SetTexture(styleset.mainTextureName, tex);
+                            
                             Debug.Log($"got MainTex for {m.name}");
                         }
                         else if (m.HasProperty("_BaseMap"))

@@ -52,11 +52,13 @@ namespace ZTX.Materials
                         {
                             Color color = m.GetColor("_Color");
                             mNew.SetColor(styleset.mainColorName, color);
+                            Debug.Log($"_Color {color} {styleset.mainColorName} {m.name} {mNew.name}");
                         }
                         else if (m.HasProperty("_BaseColor"))
                         {
                             Color color = m.GetColor("_BaseColor");
                             mNew.SetColor(styleset.mainColorName, color);
+                            Debug.Log($"_BaseColor {color} {styleset.mainColorName} {m.name} {mNew.name}");
                         }
 
                         m = mNew;

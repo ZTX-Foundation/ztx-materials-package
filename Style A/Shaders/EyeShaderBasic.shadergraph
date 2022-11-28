@@ -498,10 +498,10 @@
     "m_Guid": {
         "m_GuidSerialized": "f8fd8b55-94f8-4795-88a2-19aed3e80f60"
     },
-    "m_Name": "OddColor",
+    "m_Name": "_Odd",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "OddColor",
-    "m_DefaultReferenceName": "_OddColor",
+    "m_RefNameGeneratedByDisplayName": "_Odd",
+    "m_DefaultReferenceName": "_Odd",
     "m_OverrideReferenceName": "_Odd",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -1223,10 +1223,10 @@
     "m_Guid": {
         "m_GuidSerialized": "6b8181a1-6c87-4ecf-ba82-f8d33788c1bf"
     },
-    "m_Name": "With Lens",
+    "m_Name": "_UseLens",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "With Lens",
-    "m_DefaultReferenceName": "_With_Lens",
+    "m_RefNameGeneratedByDisplayName": "_UseLens",
+    "m_DefaultReferenceName": "_UseLens",
     "m_OverrideReferenceName": "_UseLens",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,

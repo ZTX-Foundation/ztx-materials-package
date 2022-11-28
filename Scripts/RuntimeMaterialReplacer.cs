@@ -25,6 +25,9 @@ namespace ZTX.Materials
 
         public void NextMaterialSet(GameObject target)
         {
+#if !UNITY_EDITOR
+            return;
+#endif
             currentIndexStyleset++;
 
             if (currentIndexStyleset >= styleSets.styleSets.Length)
@@ -37,6 +40,9 @@ namespace ZTX.Materials
 
         public void SetInitialMaterials(GameObject target)
         {
+#if !UNITY_EDITOR
+            return;
+#endif
             SkinnedMeshRenderer[] skinnedMeshRenderers = target.GetComponentsInChildren<SkinnedMeshRenderer>();
 
             for (int i = 0; i < skinnedMeshRenderers.Length; i++)

@@ -33,6 +33,7 @@ namespace ZTX.Materials
                     // Replace the material
                     //Material mNew = SwapMaterial(m, styleset);
                     Material mNew = new Material(SwapMaterial(m, styleset));
+                    mNew.name = $"{mNew.name}(Clone)";
 
                     if (mNew != null)
                     {

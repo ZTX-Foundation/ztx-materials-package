@@ -17,6 +17,7 @@ Material:
   - DIFFUSE
   - FOG
   - MATCAP_PERSPECTIVE
+  - OUTLINE
   - OUTLINE_PASS_DISABLED
   - SHADOWS_ENABLED
   - _DETAILBLEND_MULTIPLY
@@ -47,7 +48,6 @@ Material:
   disabledShaderPasses:
   - DepthOnly
   - SHADOWCASTER
-  - SRPDEFAULTUNLIT
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -244,8 +244,8 @@ Material:
     - _OptLightmapping: 0
     - _OptPointLights: 0
     - _OptShadow: 0
-    - _Outline: 0
-    - _OutlineWidth: 0.002
+    - _Outline: 1
+    - _OutlineWidth: 0.003
     - _Parallax: 0.005
     - _Plant: 0
     - _PlantBaseHeight: 0

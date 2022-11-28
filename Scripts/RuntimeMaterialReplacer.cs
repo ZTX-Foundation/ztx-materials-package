@@ -80,10 +80,6 @@ namespace ZTX.Materials
                             Color color = m.GetColor("_BaseColor");
                             mNew.SetColor(styleset.mainColorName, color);
                         }
-                        
-                        // Catch temporary eyelash issue
-                        if (m.shader.name.ToLower().Contains("softedge") || m.name.ToLower().Contains("eyelash"))
-                            mNew.SetColor(styleset.mainColorName, Color.clear);
 
                         m = mNew;
                     }

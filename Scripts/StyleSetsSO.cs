@@ -41,9 +41,9 @@ namespace ZTX.Materials
                             Texture tex = m.GetTexture("_MainTex");
                             mNew.SetTexture(styleset.mainTextureName, tex);
                         }
-                        else if (m.HasProperty("_BaseTex"))
+                        else if (m.HasProperty("_BaseMap"))
                         {
-                            Texture tex = m.GetTexture("_BaseTex");
+                            Texture tex = m.GetTexture("_BaseMap");
                             mNew.SetTexture(styleset.mainTextureName, tex);
                         }
 
@@ -51,12 +51,10 @@ namespace ZTX.Materials
                         {
                             Color color = m.GetColor("_BaseColor");
                             mNew.SetColor(styleset.mainColorName, color);
-                            Debug.Log($"_BaseColor - {color} - {styleset.mainColorName} - {m.name} - {mNew.name}");
                         } else if (m.HasProperty("_Color"))
                         {
                             Color color = m.GetColor("_Color");
                             mNew.SetColor(styleset.mainColorName, color);
-                            Debug.Log($"_Color - {color} - {styleset.mainColorName} - {m.name} - {mNew.name}");
                         }
 
                         m = mNew;
